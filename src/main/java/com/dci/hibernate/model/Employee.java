@@ -10,11 +10,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
  
-//todo add appropriate annotations for mapping
-
+@Entity
+@Table(name="EMPLOYEES")
 public class Employee implements Serializable {
  
-
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="EMP_ID")
     private Long empId;
  
     private String name;
@@ -23,6 +25,7 @@ public class Employee implements Serializable {
  
     private Long salary;
  
+    @Column(name="JOINED_ON")
     private Date joinedOn;
  
     public Long getEmpId() {

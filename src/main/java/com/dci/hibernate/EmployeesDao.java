@@ -17,12 +17,10 @@ public class EmployeesDao {
         Session session = null;
         List<Employee> empList = null;
         try {
-        	//todo
-            
-        	//get session from HibernateUtil
-            
-        	//initialize query string to retrieve list of employees and return the list
-
+            session = HibernateUtil.getSession();
+            String queryStr = "select emp from Employee emp";
+            Query query = session.createQuery(queryStr);
+            empList = query.list();
         } catch(Exception ex) {
             ex.printStackTrace();
             // handle exception here
@@ -37,11 +35,9 @@ public class EmployeesDao {
         Session session = null;
         Employee emp = null;
         try {
-        	//todo
-            
-        	//get session from HibernateUtil
-            
-            //initialize query string to retrieve employee by id
+            session = HibernateUtil.getSession();
+            String queryStr = "select emp from Employee emp";
+            emp = session.get(Employee.class, empId);
  
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -57,15 +53,10 @@ public class EmployeesDao {
         Session session = null;
         Transaction transaction = null;
         try {
-        	//todo
-            
-        	//get session from HibernateUtil
-            
-            //begin transaction
-            
-            //save the employee
-            
-            //commit transaction
+            session = HibernateUtil.getSession();
+            transaction = session.beginTransaction();
+            session.save(emp);
+            System.out.println("inserted employee: "+emp.getName());
             transaction.commit();
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -81,16 +72,11 @@ public class EmployeesDao {
         Session session = null;
         Transaction transaction = null;
         try {
-        	//todo
-            
-        	//get session from HibernateUtil
-            
-            //begin transaction
-            
-            //delete the employee
-            
-            //commit transaction
-
+            session = HibernateUtil.getSession();
+            transaction = session.beginTransaction();
+            session.delete(emp);
+            transaction.commit();
+            System.out.println("deleted employee: "+emp.getName());
         } catch(Exception ex) {
             ex.printStackTrace();
             // handle exception here

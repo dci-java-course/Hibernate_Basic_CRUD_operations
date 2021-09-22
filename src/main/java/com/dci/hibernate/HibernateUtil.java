@@ -26,10 +26,7 @@ public class HibernateUtil {
     public static void loadSessionFactory(){
  
         Configuration configuration = new Configuration();
- 
-        //todo -> configure the configuration object using the configuration file j2n-hibernate.cfg.xml         
-        
-        
+        configuration.configure("/j2n-hibernate.cfg.xml");
         configuration.addAnnotatedClass(Employee.class);
         ServiceRegistry srvcReg = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
         sessionFactory = configuration.buildSessionFactory(srvcReg);
