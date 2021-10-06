@@ -61,11 +61,11 @@ public class EmployeesDao {
             
         	//get session from HibernateUtil
             
-            //begin transaction
+         //begin transaction
             
-            //save the employee
+         //save the employee
             
-            //commit transaction
+         //commit transaction
             transaction.commit();
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -85,11 +85,11 @@ public class EmployeesDao {
             
         	//get session from HibernateUtil
             
-            //begin transaction
+         //begin transaction
             
-            //delete the employee
+         //delete the employee
             
-            //commit transaction
+         //commit transaction
 
         } catch(Exception ex) {
             ex.printStackTrace();
