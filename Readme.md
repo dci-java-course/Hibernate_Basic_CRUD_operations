@@ -6,7 +6,7 @@ In this exercise you are going to perform basic CRUD operations on database usin
 ```
 CREATE TABLE EMPLOYEES (
 
-    EMP_ID BIGINT NOT NULL AUTO_INCREMENT,
+    EMP_ID SERIAL,
     NAME VARCHAR(252),
     DEPARTMENT VARCHAR(128),
     SALARY BIGINT,
@@ -18,7 +18,10 @@ INSERT INTO EMPLOYEES (EMP_ID, NAME, DEPARTMENT, SALARY, JOINED_ON) VALUES (2, '
 INSERT INTO EMPLOYEES (EMP_ID, NAME, DEPARTMENT, SALARY, JOINED_ON) VALUES (3, 'Nagesh Y', 'Admin', 25000, CURRENT_TIMESTAMP);
 INSERT INTO EMPLOYEES (EMP_ID, NAME, DEPARTMENT, SALARY, JOINED_ON) VALUES (4, 'Vasu V', 'Security', 2500, CURRENT_TIMESTAMP);
 ```
-
+  Additionally create a sequence named 'hibernate_sequence'
+```
+  CREATE SEQUENCE hibernate_sequence START 5;
+```
 
 2. Edit the j2n-hibernate.cfg.xml file (in src/main/resources) to hold the appropriate configurations.
 
