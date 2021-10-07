@@ -2,6 +2,9 @@
 
 In this exercise you are going to perform basic CRUD operations on database using Hibernate.
 
+Verify that you have PostgreSQL server (version > 9.6.25) and any sql client to connect to the PostgreSQL server pre-installed. If you don't have you can download the installer from [Here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). The installer includes the PostgreSQl server, pgAdmin: a graphical tool for managing and developing your databases.  
+
+
 1. Create a database named my_db and create a table in it using the query :
 ```
 CREATE TABLE EMPLOYEES (
@@ -22,7 +25,6 @@ INSERT INTO EMPLOYEES (EMP_ID, NAME, DEPARTMENT, SALARY, JOINED_ON) VALUES (4, '
 ```
   CREATE SEQUENCE hibernate_sequence START 5;
 ```
-
 
 2. Edit the j2n-hibernate.cfg.xml file (in src/main/resources) to hold the appropriate configurations.
 
